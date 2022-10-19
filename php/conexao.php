@@ -1,12 +1,13 @@
 <?php
 
-//variáveis
+    //variáveis
 
-$url = "localhost";
-$usuario = "me";
-$senha = "Su1S5nHa<>";
-$base = "api";
+    $url = "localhost";
+    $usuario = "me";
+    $senha = "Su1S5nHa<>";
+    $base = "api";
 
-//Conexão
+    //Conexão
 
-$conexao = mysqli_connect($url, $usuario, $senha, $base);
+    $conexao = mysqli_connect($url, $usuario, $senha, $base);
+?>

@@ -1,29 +1,30 @@
 <?php
+    //Incluir a conexao
+    include("conexao.php");
+    // include("content.php");
 
-      //Incluir a conexao
-      include("conexao.php");
+    //sql
+    $sql = "SELECT *FROM cursos order by public_nomeCurso asc";
 
-      //sql
-      $sql = "SELECT *FROM cursos";
+    //executar
+    $executar = mysqli_query($conexao, $sql);
 
-      //executar
-      $executar = mysqli_query($conexao, $sql);
+    //vetor
+    $cursos = [];
 
-      //vetor
-      $cursos = [];
+    //índice
+    $i = 0;
 
-      //índice
-      $indice = 0;
+    //laço
+    while ($result = mysqli_fetch_assoc($executar)) {
+      $cursos[$i]['public_idCurso'] = $result['public_idCurso'];
+      $cursos[$i]['public_nomeCurso'] = $result['public_nomeCurso'];
+      $cursos[$i]['public_valorCurso'] = $result['public_valorCurso'];
 
-      //laço
-      while ($linha = mysqli_fetch_assoc($executar)) {
-        $cursos[$indice]['public_idCurso'] = $linha['public_idCurso'];
-        $cursos[$indice]['public_nomeCurso'] = $linha['public_nomeCurso'];
-        $cursos[$indice]['public_valorCurso'] = $linha['public_valorCurso'];
+      $i++;
+    }
 
-        $indice++;
-      }
-
-      //JSON
-      json_encode(['cursos' => $cursos]);
-  ?>
+    //JSON
+    json_encode(['cursos' => $cursos]);
+  //  var_dump($cursos);
+?>

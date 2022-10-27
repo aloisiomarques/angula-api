@@ -1,0 +1,12 @@
+{
+    "/api/*": {
+    "target": "http://www.nazarick.com/",
+    "secure": false,
+    "pathRewrite": {
+        "^/api": ""
+    },
+    "changeOrigin:": false,
+    "logLevel": "debug"
+
+    }
+}

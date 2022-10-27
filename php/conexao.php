@@ -1,5 +1,4 @@
 <?php
-
     //variáveis
 
     $url = "localhost";
@@ -10,4 +9,7 @@
     //Conexão
 
     $conexao = mysqli_connect($url, $usuario, $senha, $base);
+    
+    //resolve problema de assentos
+    mysqli_set_charset($conexao, "utf8");
 ?>

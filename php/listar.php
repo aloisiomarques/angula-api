@@ -26,5 +26,5 @@
 
     //JSON
     json_encode(['cursos' => $cursos]);
-  //  var_dump($cursos);
+    var_dump($cursos);
 ?>

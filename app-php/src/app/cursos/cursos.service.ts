@@ -11,7 +11,7 @@ export class CursosService {
 
   //Base URL
 
-  url = "http://www.nazarick.com/angula-api/php/";
+  url = "http://www.nazarick.com/api/php/";
 
   //Vetor
 
@@ -22,7 +22,7 @@ export class CursosService {
   //Obeter Todos os cursos
 
   obterCursos(): Observable<Cursos[]> {
-    return this.http.get<Cursos[]>(this.url+"listar.php").pipe(
+    return this.http.get(this.url+"listar.php").pipe(
       map((res: any) => {
         this.vetor = res['cursos'];
         return this.vetor;
